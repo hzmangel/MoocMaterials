@@ -5,15 +5,18 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Random;
+
+import static org.junit.Assert.*;
 
 /**
  * Created by huzim on 16/02/20.
  */
-public class InsertionSortTest {
+public class SelectionSortTest {
     protected int[] data;
     protected int[] sorted_data;
     protected final static int size = 42;
-    protected InsertionSort sort_obj;
+    protected SelectionSort sort_obj;
 
     @Before
     public void setUp() throws Exception {
@@ -22,8 +25,7 @@ public class InsertionSortTest {
         sorted_data = data.clone();
         Arrays.sort(sorted_data);
 
-
-        sort_obj = new InsertionSort(size, data);
+        sort_obj = new SelectionSort(size, data);
     }
 
     @Test
