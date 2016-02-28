@@ -4,16 +4,22 @@ public class SelectionSort implements Sort {
 
     private final int data_size;
     private final int[] data;
+    private final boolean step_log;
 
-    public SelectionSort(final int N, int[] data) {
+    public SelectionSort(final int N, int[] data, boolean step_log) {
         this.data_size = N;
         this.data = data;
+        this.step_log = step_log;
     }
 
     @Override
     // Change data order in-place
     public void sort() {
         for (int i = 0; i < data_size-1; i++) {
+            if (step_log) {
+                CodeUtils.printStepLog(i, data);
+            }
+
             exch(i, min_idx(i));
         }
     }
@@ -43,5 +49,4 @@ public class SelectionSort implements Sort {
 
         return result_idx;
     }
-
 }
