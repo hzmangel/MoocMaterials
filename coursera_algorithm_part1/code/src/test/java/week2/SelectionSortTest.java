@@ -25,7 +25,7 @@ public class SelectionSortTest {
         sorted_data = data.clone();
         Arrays.sort(sorted_data);
 
-        sort_obj = new SelectionSort(size, data);
+        sort_obj = new SelectionSort(size, data, true);
     }
 
     @Test

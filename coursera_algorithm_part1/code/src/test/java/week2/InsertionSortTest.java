@@ -22,8 +22,7 @@ public class InsertionSortTest {
         sorted_data = data.clone();
         Arrays.sort(sorted_data);
 
-
-        sort_obj = new InsertionSort(size, data);
+        sort_obj = new InsertionSort(size, data, true);
     }
 
     @Test
