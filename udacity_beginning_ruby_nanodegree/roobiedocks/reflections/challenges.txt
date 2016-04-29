@@ -1,0 +1,5 @@
+I have read some posts before, and I know Ruby / RoR is good for quick start,
+but seems there are some bad points of Ruby. What I am concerning are:
+
+1. Is the performance be a lack of Ruby apps?
+2. Does Ruby good at some other areas except Web?

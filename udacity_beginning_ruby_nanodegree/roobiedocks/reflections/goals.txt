@@ -1,0 +1,4 @@
+After finishing this class, I want to be able to solve interesting problems,
+and be able to write some web services with Rails. I am also interesting at
+some meta programming things of Ruby, and want to learn more about that.
+
