@@ -58,6 +58,7 @@ target/
 
 # Virtual env directory
 venv/
+.venv/
 
 # Credential files
 credentials.py
