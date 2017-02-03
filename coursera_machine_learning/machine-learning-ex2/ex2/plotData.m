@@ -11,15 +11,10 @@ figure; hold on;
 %               2D plot, using the option 'k+' for the positive
 %               examples and 'ko' for the negative examples.
 %
-
-
-
-
-
-
-
-
-
+pos_pts = X(y==1, :);
+neg_pts = X(y==0, :);
+plot(pos_pts(:, 1), pos_pts(:, 2), 'k+r');
+plot(neg_pts(:, 1), neg_pts(:, 2), 'kob');
 % =========================================================================
 
 
