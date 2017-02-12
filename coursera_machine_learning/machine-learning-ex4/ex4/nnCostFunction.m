@@ -82,25 +82,6 @@ regularized_sum = ((sum(sum(Theta1(:, 2:end) .^ 2)) + sum(sum(Theta2(:, 2:end) .
 regularized_item = lambda * regularized_sum / (2 * m);
 
 J = sum(sum((-y_mat .* log(h_theta_x) - (1-y_mat) .* log(1-h_theta_x)))) / m + regularized_item;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 % -------------------------------------------------------------
 
 % =========================================================================
