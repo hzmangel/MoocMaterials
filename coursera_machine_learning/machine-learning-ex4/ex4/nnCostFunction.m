@@ -63,6 +63,23 @@ Theta2_grad = zeros(size(Theta2));
 %
 
 
+% Add bias element to input elements
+a_1 = [ones(size(X(:, 1))), X];
+z_2 = (Theta1 * a_1')';
+
+a_2 = [ones(size(z_2(:, 1))), sigmoid(z_2)];
+z_3 = (Theta2 * a_2')';
+
+h_theta_x = sigmoid(z_3);
+
+y_mat = zeros(num_labels);
+for i = 1:size(y)
+    y_mat(i, y(i)) = 1;
+endfor
+
+J = sum(sum((-y_mat .* log(h_theta_x) - (1-y_mat) .* log(1-h_theta_x)))) / m;
+
+
 
 
 
