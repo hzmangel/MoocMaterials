@@ -72,10 +72,11 @@ z_3 = (Theta2 * a_2')';
 
 h_theta_x = sigmoid(z_3);
 
+% Convert y number to vector
 y_mat = zeros(num_labels);
 for i = 1:size(y)
     y_mat(i, y(i)) = 1;
-endfor
+end
 
 % Remove first column and row while calculating regularized item
 regularized_sum = ((sum(sum(Theta1(:, 2:end) .^ 2)) + sum(sum(Theta2(:, 2:end) .^ 2))));
