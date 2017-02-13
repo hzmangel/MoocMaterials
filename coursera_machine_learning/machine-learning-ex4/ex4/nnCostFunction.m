@@ -82,6 +82,24 @@ regularized_sum = ((sum(sum(Theta1(:, 2:end) .^ 2)) + sum(sum(Theta2(:, 2:end) .
 regularized_item = lambda * regularized_sum / (2 * m);
 
 J = sum(sum((-y_mat .* log(h_theta_x) - (1-y_mat) .* log(1-h_theta_x)))) / m + regularized_item;
+
+
+% Calculate backpropagation
+
+delta_3 = h_theta_x - y_mat;
+delta_2 = (delta_3 * Theta2(:, 2:end)) .* sigmoidGradient(z_2);
+
+Delta_1 = (a_1' * delta_2)';
+Delta_2 = (a_2' * delta_3)';
+
+regularized_theta1 = Theta1 * lambda / m;
+regularized_theta1(:, 1) = 0;
+
+regularized_theta2 = Theta2 * lambda / m;
+regularized_theta2(:, 1) = 0;
+
+Theta1_grad = Delta_1 / m + regularized_theta1;
+Theta2_grad = Delta_2 / m + regularized_theta2;
 % -------------------------------------------------------------
 
 % =========================================================================
