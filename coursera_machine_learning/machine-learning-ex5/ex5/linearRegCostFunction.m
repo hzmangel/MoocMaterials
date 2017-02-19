@@ -18,18 +18,8 @@ grad = zeros(size(theta));
 %
 %               You should set J to the cost and grad to the gradient.
 %
-
-
-
-
-
-
-
-
-
-
-
-
+regularize_item = lambda * sum(theta(2:end) .^ 2) / (2 * m);
+J = sum((X * theta - y) .^ 2) / (2 * m) + regularize_item;
 % =========================================================================
 
 grad = grad(:);
