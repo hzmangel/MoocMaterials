@@ -20,13 +20,23 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
+for x_idx = 1:size(X, 1)
+    x = X(x_idx, :);
+    min_distance = 1e32;
+    min_idx = 0;
 
+    for centroid_idx = 1:K
+        centroid = centroids(centroid_idx, :);
 
+        distance = (x(1) - centroid(1)) ^ 2 + (x(2) - centroid(2)) ^ 2;
+        if distance < min_distance
+            min_distance = distance;
+            min_idx = centroid_idx;
+        endif
+    endfor
 
-
-
-
-
+    idx(x_idx) = min_idx;
+endfor
 % =============================================================
 
 end
