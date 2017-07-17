@@ -25,14 +25,10 @@ centroids = zeros(K, n);
 %
 % Note: You can use a for-loop over the centroids to compute this.
 %
-
-
-
-
-
-
-
-
+for centroid_idx = 1:K
+    clustered_x = X(idx == centroid_idx, :);
+    centroids(centroid_idx, :) = sum(clustered_x / size(clustered_x, 1));
+endfor
 % =============================================================
 
 
